@@ -8,7 +8,8 @@ import {
   BellOutlined,
   LogoutOutlined,
   UserSwitchOutlined,
-  TeamOutlined
+  TeamOutlined,
+  AuditOutlined
 } from '@ant-design/icons';
 import Dashboard from '../pages/Dashboard';
 import UserManagement from '../pages/UserManagement';
@@ -16,6 +17,7 @@ import RoleManagement from '../pages/RoleManagement';
 import Settings from '../pages/Settings';
 import TagManagement from '../pages/TagManagement';
 import SchoolManagement from '../pages/SchoolManagement';
+import VerificationManagement from '../pages/VerificationManagement';
 
 const { Header, Sider, Content } = Layout;
 const { Title } = Typography;
@@ -91,6 +93,11 @@ const MainLayout: React.FC = () => {
               key: '6',
               icon: <SettingOutlined />,
               label: <Link to="/schools">学校管理</Link>
+            },
+            {
+              key: '7',
+              icon: <AuditOutlined />,
+              label: <Link to="/verifications">认证审核</Link>
             }
           ]}
         />
@@ -130,6 +137,7 @@ const MainLayout: React.FC = () => {
             <Route path="/settings" element={<Settings />} />
             <Route path="/tags" element={<TagManagement />} />
             <Route path="/schools" element={<SchoolManagement />} />
+            <Route path="/verifications" element={<VerificationManagement />} />
           </Routes>
         </Content>
       </Layout>
